@@ -10,7 +10,7 @@ ax.get_yaxis().tick_left()
 plt.xlabel("Orf Size", fontsize=16)
 plt.ylabel("Count", fontsize=16)  
 
-handle = open("iona.allmasked", "rU")
+handle = open("ciona.allmasked", "rU") # Change to point to the correct genome file
 
 
 table = 11
