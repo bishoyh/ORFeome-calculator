@@ -1,2 +1,2 @@
 # ORFeome-calculator
-Calculate and generate ORF sequences from genomes
+Calculate sizes and generate ORF sequences from genomes
