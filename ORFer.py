@@ -1,7 +1,8 @@
+"""Fing ORFs in Genomes and calculate their length."""
 from Bio import SeqIO
-import matplotlib.pyplot as plt  
+import matplotlib.pyplot as plt
 
-plt.figure(figsize=(12, 9))  
+plt.figure(figsize=(12,9))  
 ax = plt.subplot(111) 
 ax.spines["top"].set_visible(False) 
 ax.spines["right"].set_visible(False) 
@@ -17,6 +18,8 @@ table = 11
 min_pro_len = 100
 # Modified From biopython cookbook recipe 19.1.13
 def find_orfs_with_trans(seq, trans_table, min_protein_length):
+    """Find orfs and translate them."""
+
     answer = []
     seq_len = len(seq)
     for strand, nuc in [(+1, seq), (-1, seq.reverse_complement())]:
@@ -52,12 +55,11 @@ for record in SeqIO.parse(handle, "fasta") :
 		print 'Skipped one \n'
 		continue	
 	    L.append(len(pro)*3)  
-	    print("%s...%s - length %i, strand %i, %i:%i,%s" \
-            % (pro[:100], pro[-3:], len(pro)*3, strand, start, end, record.id))
+	    print("%s...%s - length %i, strand %i, %i:%i,%s" % (pro[:100], pro[-3:], len(pro)*3, strand, start, end, record.id))
 handle.close()
 f = open('outputcionamaskedXXXX.txt', 'w')
 for ele in L:
     f.write(str(ele)+'\n')
 f.close
 plt.hist(L ,color="#3F5D7D", bins=100) 
-plt.savefig("cionamasked.png", bbox_inches="tight");  
+plt.savefig("cionamasked.png", bbox_inches="tight")
