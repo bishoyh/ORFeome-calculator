@@ -92,7 +92,7 @@ def main(argv):
         sys.exit(2)
     for opt, arg in opts:
         if opt == '-h':
-            print 'test.py -i <inputfile> -o <outputfile>'
+            print 'ORFer.py -i <inputfile> -o <outputfile>'
             sys.exit()
         elif opt in ("-i", "--ifile"):
             inputfile = arg
