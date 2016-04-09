@@ -70,7 +70,7 @@ def parse(fastafile, output_filename):
                 print 'Skipped one \n'
                 continue
             L.append(len(pro) * 3)
-            #print("%s...%s - length %i, strand %i, %i:%i,%s" % (pro[:100], pro[-3:], len(pro) * 3, strand, start, end, record.id))
+            print("%s...%s - length %i, strand %i, %i:%i,%s" % (pro[:100], pro[-3:], len(pro) * 3, strand, start, end, record.id))
     handle.close()
 
     f = open(output_filename, 'w')
